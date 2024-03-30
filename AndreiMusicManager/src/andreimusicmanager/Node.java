@@ -12,16 +12,26 @@ public class Node {
     
     private Object element;
     private Node next, prev;
-    private final Song song;
-  
+    private Song song;
+
+    public Node(Song newSong) {
+    this.element = null;
+    this.next = null;
+    this.prev = null;
+    this.song = newSong;
+
+    }
+
     public Node(Object element, Node next, Node prev, Song song) {
         this.element = element;
         this.next = next;
         this.prev = prev;
-        this.song = song; 
-     
+        this.song = song;
     }
-   
+
+// Getters and setters for the element, next, prev, and song properties
+    
+    // Getter and setter for the element property
     public Object getElement() {
         return element;
     }
@@ -30,6 +40,7 @@ public class Node {
         this.element = element;
     }
 
+    // Getter and setter for the next property
     public Node getNext() {
         return next;
     }
@@ -38,6 +49,7 @@ public class Node {
         this.next = next;
     }
 
+    // Getter and setter for the prev property
     public Node getPrev() {
         return prev;
     }
@@ -45,7 +57,14 @@ public class Node {
     public void setPrev(Node prev) {
         this.prev = prev;
     }
-    
-}
 
+    // Getter and setter for the song property
+    public Song getSong() {
+        return song;
+    }
+
+    public void setSong(Song song) {
+        this.song = song;
+    }
   
+}

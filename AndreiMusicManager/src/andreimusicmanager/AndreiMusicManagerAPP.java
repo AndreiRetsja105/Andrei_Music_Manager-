@@ -15,6 +15,11 @@ public class AndreiMusicManagerAPP {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        MusicManagerGUI gui = new MusicManagerGUI () ;
+        //set the visibility to true 
+        gui.setVisible(true);
     }
+    
     
 }

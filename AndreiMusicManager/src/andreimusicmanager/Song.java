@@ -4,41 +4,72 @@
  */
 package andreimusicmanager;
 
+import java.util.Objects;
+
 /**
  *
  * @author arets
  */
 public class Song {
     
-    private String name, artist, album ;
+       private String title, artist, album ;
 
-    public Song(String name, String artist, String album ) {
-        this.name = name;
+    // Constructor
+    public Song(String title, String artist, String album) {
+        this.title = title;
         this.artist = artist;
         this.album = album;
-        
     }
 
-    public void setName(String name) {
-        this.name = name;
+    // Getters and setters
+    public String getArtist() {
+        return artist;
     }
 
-    public void setAlbum(String album) {
-        this.album = album;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
+    public String getTitle() {
+        return title;
+    }
 
-    public String getName() {
-        return name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAlbum() {
         return album;
     }
 
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
+    // hashCode method
     @Override
-    public String toString() {
-        return "Song{" + "name=" + name + ", artist=" + artist + ", album=" + album + '}';
+    public int hashCode() {
+        return Objects.hash(title, artist, album);
     }
     
+    @Override
+   //The method to compare Title , Artist , and Album attributes = Using the Objects for a equals
+    public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    Song other = (Song) obj;
+    return Objects.equals(this.title, other.title) &&
+           Objects.equals(this.artist, other.artist) &&
+           Objects.equals(this.album, other.album);
+}
+    
+    // toString method
+    @Override
+    public String toString() {
+        return "Song{" + "Title: " + title + ", Artist: " + artist + ", Album: " + album + '}';
+    }
 }

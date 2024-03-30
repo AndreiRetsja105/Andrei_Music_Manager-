@@ -18,9 +18,7 @@ public interface GenrePlaylistInterface {
     void addRockSong(Song song);
     void deletePopSong(Song song);
     void deleteRockSong(Song song);
-    
-    void searchPopSong(String name, String artist, String album );
-    void searchRockSong(String name, String artist, String album );
-    
+    void searchPopSong(String title, String artist, String album );
+    void searchRockSong(String title, String artist, String album );
     void setRepeat(boolean repeat);
 }
